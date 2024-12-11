@@ -1,1 +1,1 @@
-KINDLY REPLACE THE CODE FROM "CV_Project.ipynb" per cell using "Cvmaincode.txt".
+KINDLY REPLACE THE CODE FROM "CV_Project.ipynb" PER CELL USING "Cvmaincode.txt".
