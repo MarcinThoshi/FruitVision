@@ -313,7 +313,7 @@ def process_video_or_webcam(source):
             if not selected_fruits or fruit_name in selected_fruits:
                 frame_fruit_counts[fruit_name] += 1
 
-        update_fruit_counter(frame_fruit_counts)
+        update_fruit_counter(frame_fruit_counts)  # Update the counter dynamically after each frame
 
         for fruit, count in frame_fruit_counts.items():
             max_fruit_counts[fruit] = max(max_fruit_counts[fruit], count)
@@ -332,6 +332,10 @@ def process_video_or_webcam(source):
 
         cv2.imshow("Detection", annotated_frame)
         total_frames += 1
+
+        # Force GUI to update while video is being processed
+        root.update_idletasks()
+        root.update()
 
         if cv2.waitKey(1) & 0xFF == ord("q"):
             break
@@ -378,7 +382,6 @@ view_logs_button = tk.Button(
     button_frame, text="View Logs", font=("Arial", 18), command=view_logs
 )
 view_logs_button.pack(side="left", padx=20)
-
 
 # Start GUI
 root.mainloop()
